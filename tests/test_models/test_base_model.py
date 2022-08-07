@@ -76,8 +76,8 @@ class TestBaseModel(unittest.TestCase):
     def test_3_id(self):
         """Tests for unique user ids."""
 
-        l = [BaseModel().id for i in range(1000)]
-        self.assertEqual(len(set(l)), len(l))
+        m = [BaseModel().id for i in range(1000)]
+        self.assertEqual(len(set(l)), len(m))
 
     def test_3_save(self):
         """Tests the public instance method save()."""
@@ -139,7 +139,7 @@ class TestBaseModel(unittest.TestCase):
         """Tests instantiation with **kwargs."""
 
         my_model = BaseModel()
-        my_model.name = "Holberton"
+        my_model.name = "My_First_Model"
         my_model.my_number = 89
         my_model_json = my_model.to_dict()
         my_new_model = BaseModel(**my_model_json)
